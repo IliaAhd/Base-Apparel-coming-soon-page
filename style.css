@@ -1,5 +1,81 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 :root {
   --Desaturated-Red: hsl(0, 36%, 70%);
+  --Soft-Desaturated-Red: hsl(0, 80%, 86%);
   --Soft-Red: hsl(0, 93%, 68%);
   --Dark-Grayish-Red: hsl(0, 6%, 24%);
 
@@ -7,4 +83,69 @@
   --linear-color: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
 
   font-family: "Josefin Sans", sans-serif;
+}
+
+.container {
+  display: flex;
+  background: var(--linear-light);
+}
+
+.left-section {
+  padding: 5rem;
+  padding-left: 8rem;
+  width: 60%;
+}
+
+.heading {
+  color: var(--Dark-Grayish-Red);
+  margin-top: 5rem;
+  font-size: 5rem;
+  width: 2rem;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.bold {
+  color: var(--Desaturated-Red);
+  font-weight: 300;
+}
+
+.paragraph {
+  width: 40ch;
+  color: var(--Desaturated-Red);
+  margin-block: 2rem;
+}
+
+.attribution {
+  text-align: center;
+}
+
+.right-section {
+  width: 40%;
+}
+
+form {
+  position: relative;
+  width: 25rem;
+}
+
+.input {
+  border: 1px solid var(--Soft-Desaturated-Red);
+  border-radius: 100vmax;
+  padding: 0.7rem;
+  padding-left: 2rem;
+  width: 25rem;
+}
+
+.submit {
+  color: #fff;
+  background: var(--linear-color);
+  border: 1px solid transparent;
+  border-radius: 100vmax;
+  padding-inline: 2.5rem;
+  padding-block: 0.7rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
 }
