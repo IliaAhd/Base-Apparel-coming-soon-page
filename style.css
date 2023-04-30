@@ -88,7 +88,6 @@ select {
 .container {
   display: flex;
   background: var(--linear-light);
-  height: 100vh;
 }
 
 .left-section {
@@ -101,7 +100,6 @@ select {
   color: var(--Dark-Grayish-Red);
   margin-top: 5rem;
   font-size: 5rem;
-  width: 2rem;
   line-height: normal;
   text-transform: uppercase;
 }
@@ -142,7 +140,7 @@ form {
   padding-left: 2rem;
   width: 25rem;
   outline: none;
-  transition: border .3s;
+  transition: border 0.3s;
 }
 
 .input::placeholder {
@@ -169,4 +167,49 @@ form {
 
 .submit:hover {
   background: var(--Soft-Desaturated-Red);
+}
+
+.mobile-img {
+  width: 100%;
+}
+
+@media (min-width: 60em) {
+  .mobile-img {
+    display: none;
+  }
+}
+
+@media (max-width: 60em) {
+  .container {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .right-section {
+    display: none;
+  }
+
+  .logo {
+    margin: 2rem;
+  }
+
+  .left-section {
+    width: fit-content;
+    padding: 0;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  form {
+    margin-inline: auto;
+  }
+
+  .paragraph {
+    width: auto;
+    margin-inline: 5%;
+  }
+}
+
+footer {
+  margin-top: 4rem;
 }
